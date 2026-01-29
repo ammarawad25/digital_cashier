@@ -7,7 +7,7 @@ export const getCustomerOrders = async (customerPhone) => {
   }
 
   try {
-    const response = await fetch(`http://localhost:8000/api/customer/orders?phone=${encodeURIComponent(customerPhone)}`, {
+    const response = await fetch(`/api/customer/orders?phone=${encodeURIComponent(customerPhone)}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from src.api.routes import conversation, customer
 from src.models.db_session import init_db
 import asyncio
@@ -19,6 +20,9 @@ app.add_middleware(
 
 app.include_router(conversation.router, prefix="/api/conversation", tags=["conversation"])
 app.include_router(customer.router, prefix="/api", tags=["customer"])
+
+# Serve static files from the built frontend
+app.mount("/", StaticFiles(directory="src/static", html=True), name="static")
 
 # Background task to update order statuses
 async def update_order_statuses():
@@ -99,7 +103,3 @@ async def startup_event():
     asyncio.create_task(preload_models())
     # Start background task
     asyncio.create_task(update_order_statuses())
-
-@app.get("/")
-async def root():
-    return {"message": "Customer Service Agent API is running"}

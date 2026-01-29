@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Use the full API URL including /api prefix
-const API_BASE = 'http://localhost:8000/api';
+const API_BASE = '/api';
 
 const client = axios.create({
   baseURL: API_BASE,

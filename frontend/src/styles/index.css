@@ -1,0 +1,78 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  --edix-bg-dark: #121212;
+  --edix-surface-dark: #1A1A1A;
+  --edix-card-dark: #242A30;
+  --edix-border-dark: #2C353E;
+  --edix-brand-blue: #0046CC;
+  --edix-text-primary: #FFFFFF;
+  --edix-text-secondary: #8492A3;
+}
+
+body {
+  margin: 0;
+  background-color: var(--edix-bg-dark);
+  color: var(--edix-text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2C353E;
+  border-radius: 10px;
+}
+
+.edix-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #F1F3F5;
+  font-size: 13px;
+  width: 100%;
+}
+
+.voice-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #282F37;
+  border: 1px solid #2C353E;
+  transition: all 0.2s ease;
+}
+
+.btn-edix-primary {
+  background: #0046CC;
+  color: white;
+}
+
+.agent-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--edix-border-dark);
+}
+
+.agent-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chat-window {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
